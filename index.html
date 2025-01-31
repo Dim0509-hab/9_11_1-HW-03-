@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор случайных пользователей</title>
+    
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row game-card align-items-center">
+        <div class="col col-md-6 offset-md-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    <p class="m-0">Окно результатов генерации</p><hr>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="card-title">Фамилия: <span id="surnameOutput">Генерация фамилии</span></h4>
+                            <h4>Имя: <span id="firstNameOutput">Генерация имени</span></h4>
+                            <h4>Отчество: <span id="patronymicOutput">Генерация отчества</span></h4><hr>
+                            <p>
+                                <h4> Пол: <span id="genderOutput">Генерация пола</span>
+                                <span>, </span>
+                                 год рождения: <span id="birthYearOutput">Генерация года рождения</span></h4>
+                                 <h4>Дата: <span id="birthDayOutput"> День рождения</span></h4><hr>
+                                <h4>Профессия: <span id="professionOutput"> Профессия</span></h4>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="personGenerator.js"></script>
+<script src="init.js"></script>
+</body>
+</html>
