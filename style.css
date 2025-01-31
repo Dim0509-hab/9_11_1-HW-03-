@@ -7,12 +7,12 @@
 
 #genderOutput {
     color: rgb(201, 136, 17);
-    font-size: 25px;
+    font-size: 23px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, ;
 
 }
 #birthYearOutput {
-    color: rgb(201, 17, 78);
+    color: rgb(152, 17, 201);
     font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, ;
 
@@ -53,13 +53,6 @@ p {
 }
 
 
-h3 {
-    color: rgb(39, 51, 213);
-    font-size: 25px;
-    font-style: oblique;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 h4 {
     color: rgb(23, 30, 121);
     font-size: 20px;
@@ -96,6 +89,17 @@ h4 {
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.btn-link {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 

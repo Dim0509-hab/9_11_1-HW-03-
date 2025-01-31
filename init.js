@@ -1,4 +1,5 @@
-
+   
+   
 window.onload = function()
 {
     const initPerson = personGenerator.getPerson();
@@ -8,6 +9,15 @@ window.onload = function()
     document.getElementById('birthYearOutput').innerText = initPerson.birthYear;
     document.getElementById('birthDayOutput').innerText = initPerson.birthDay + " " + initPerson.monthDay;
     document.getElementById('professionOutput').innerText = initPerson.profession;
-    document.getElementById('patronymicOutput').innerText = initPerson.patronymic;
+    document.getElementById('patronymicOutput').innerText = initPerson.patronymic;     
+
 };
+
+document.getElementById('btnRetry').addEventListener('click', function () {  //Заново
+    window.location.reload()
+   })
+/*
+document.getElementById('btnClear').addEventListener('click', function () {  //stop
+    window.location.reload()
+   })*/
 
