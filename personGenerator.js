@@ -127,43 +127,39 @@ const personGenerator = {
 
         randomValue: function (json) {
         const obj = JSON.parse(json);
-        const prop = `id_${this.randomIntNumber(obj.count, 1)}`;  // this = personGenerator
+        const prop = `id_${this.randomIntNumber(obj.count, 1)}`;                    // this = personGenerator
         return obj.list[prop];
     },
 
-    randomFirstName: function() {                                       // Имя
+    randomFirstName: function() {                                                      // Имя
         if   (this.person.gender == "Мужчина"  ) {
             
             return this.randomValue(this.firstNameMaleJson);
-        }  else     return this.randomValue(this.firstNameFemaleJson);     
-        
+        }  else     return this.randomValue(this.firstNameFemaleJson);         
     },
 
-    randomPatronymiс: function() {                                    // Отчество
-        if   (this.person.gender == "Мужчина"  ) {
+    randomPatronymiс: function() {                                                   // Отчество
+        if   (this.person.gender == "Мужчина"  ) { 
             
             return this.randomValue(this.patronymicJson)+ "ич";
-        }  else   return this.randomValue(this.patronymicJson)+ "нa"; 
-
+        }  else   return this.randomValue(this.patronymicJson)+ "нa";
     },
     
-    randomSurname: function() {                                    // Фамилия
+    randomSurname: function() {                                                       // Фамилия
         if   (this.person.gender == "Мужчина"  ) {
             
             return this.randomValue(this.surnameJson);
         }  else    return this.randomValue(this.surnameJson)+ "a"; 
-
     },
 
     randomProfession: function() {                                              // Профессия
         if   (this.person.gender == "Мужчина"  ) {
             
             return this.randomValue(this.professionMaleJson); 
-        }  else    return this.randomValue(this.professionFemaleJson); 
-       
+        }  else    return this.randomValue(this.professionFemaleJson);        
     },
 
-    randomBitrhMonth: function() {                                    // Месяц рождения                  
+    randomBitrhMonth: function() {                                              // Месяц рождения                  
         return this.randomValue(this.birthMonthJson);       
     }, 
     
@@ -171,29 +167,17 @@ const personGenerator = {
     randomBitrhDay30: (max = 30, min = 1) => Math.floor(Math.random() * (max - min + 1) + min),
     randomBitrhDay31: (max = 31, min = 1) => Math.floor(Math.random() * (max - min + 1) + min),
 
-
-
-    randomBitrhDay: function() {                                      // День рождения
+    randomBitrhDay: function() {                                                     // День рождения
         
-        if (this.person.monthDay == "февраля") {            // Для февраля (Спасибо без высокосных)
+        if (this.person.monthDay == "февраля") {                                       // Для февраля (Спасибо без высокосных)
             console.log("Максимум 28 дней"); 
         return this.randomBitrhDay28();
         }
-        if (this.person.monthDay == "апреля") {                   // Где 30 дней 
+        if (this.person.monthDay == "апреля" || this.person.monthDay == "сентября"    // Где 30 дней 
+            || this.person.monthDay == "ноября"  || this.person.monthDay == "июня") {     
             console.log("Максимум 30 дней");            
         return this.randomBitrhDay30();             
-        }
-        if (this.person.monthDay == "сентября") {                   // Где 30 дней 
-            console.log("Максимум 30 дней"); 
-        return this.randomBitrhDay30();            
-        }
-        if (this.person.monthDay == "ноября") {                   // Где 30 дней 
-            console.log("Максимум 30 дней");             
-        return this.randomBitrhDay30();            
-        }       
-        if (this.person.monthDay == "июня") {                   // Где 30 дней     
-            console.log("Максимум 30 дней");     
-        return this.randomBitrhDay30();             
+                    
         }else  console.log("Максимум 31 дней");  return  this.randomBitrhDay31();  
     },
     
