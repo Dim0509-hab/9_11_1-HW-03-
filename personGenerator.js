@@ -45,9 +45,9 @@ const personGenerator = {
             "id_5": "Жоржэтта",
             "id_6": "Клорэтта",
             "id_7": "Флорэтта",
-            "id_8": "Генриетта",
+            "id_8": "Колетта",
             "id_9": "Полетта",
-            "id_10": "Колетта"
+            "id_10": "Генриетта"
         }
     }`,
     patronymicJson: `{
@@ -87,7 +87,7 @@ const personGenerator = {
     }`,
 
     professionFemaleJson: `{               
-        "count": 10,
+        "count": 11,
         "list": {     
             "id_1": "Медсестра",
             "id_2": "Доярка",
@@ -98,7 +98,8 @@ const personGenerator = {
             "id_7": "Нянечка",
             "id_8": "Актриса",
             "id_9": "Певица",
-            "id_10": "Закройщица"
+            "id_10": "Програмист",
+            "id_11": "Закройщица"
         }
     }`,
     birthMonthJson: `{               
@@ -117,122 +118,9 @@ const personGenerator = {
             "id_11": "ноября",
             "id_12": "декабря"            
         }
-    }`,
+    }`,    
 
-    randomBitrhDay28:`{               
-        "count": 28,
-        "list": {     
-            "id_1": "1",
-            "id_2": "2",
-            "id_3": "3",
-            "id_4": "4",    
-            "id_5": "5",
-            "id_6": "6",      
-            "id_7": "7",
-            "id_8": "8",
-            "id_9": "9",
-            "id_10": "10",
-            "id_11": "11",
-            "id_12": "12", 
-            "id_13": "13",
-            "id_14": "14",
-            "id_15": "15",
-            "id_16": "16",    
-            "id_17": "17",
-            "id_18": "18",      
-            "id_19": "19",
-            "id_20": "20",
-            "id_21": "21",
-            "id_22": "22",
-            "id_21": "21",
-            "id_22": "22",
-            "id_23": "23",
-            "id_24": "24",
-            "id_25": "25",
-            "id_26": "26",    
-            "id_27": "27",
-            "id_28": "28"                      
-        }
-    }`,
-
-    randomBitrhDay30: `{               
-        "count": 30,
-        "list": {     
-            "id_1": "1",
-            "id_2": "2",
-            "id_3": "3",
-            "id_4": "4",    
-            "id_5": "5",
-            "id_6": "6",      
-            "id_7": "7",
-            "id_8": "8",
-            "id_9": "9",
-            "id_10": "10",
-            "id_11": "11",
-            "id_12": "12", 
-            "id_13": "13",
-            "id_14": "14",
-            "id_15": "15",
-            "id_16": "16",    
-            "id_17": "17",
-            "id_18": "18",      
-            "id_19": "19",
-            "id_20": "20",
-            "id_21": "21",
-            "id_22": "22",
-            "id_21": "21",
-            "id_22": "22",
-            "id_23": "23",
-            "id_24": "24",
-            "id_25": "25",
-            "id_26": "26",    
-            "id_27": "27",
-            "id_28": "28",
-            "id_29": "29",
-            "id_30": "30"                       
-        }
-    }`, 
-
-    randomBitrhDay31: `{               
-        "count": 31,
-        "list": {     
-            "id_1": "1",
-            "id_2": "2",
-            "id_3": "3",
-            "id_4": "4",    
-            "id_5": "5",
-            "id_6": "6",      
-            "id_7": "7",
-            "id_8": "8",
-            "id_9": "9",
-            "id_10": "10",
-            "id_11": "11",
-            "id_12": "12", 
-            "id_13": "13",
-            "id_14": "14",
-            "id_15": "15",
-            "id_16": "16",    
-            "id_17": "17",
-            "id_18": "18",      
-            "id_19": "19",
-            "id_20": "20",
-            "id_21": "21",
-            "id_22": "22",
-            "id_21": "21",
-            "id_22": "22",
-            "id_23": "23",
-            "id_24": "24",
-            "id_25": "25",
-            "id_26": "26",    
-            "id_27": "27",
-            "id_28": "28",
-            "id_29": "29",
-            "id_30": "30",
-            "id_31": "31"
-        }
-    }`,
-
-    randomGender:() =>  Math.round(Math.random() * 2) > 1 ? 'Мужчина' : 'Женщина',       //  Пол      
+    randomGender:() =>  Math.round(Math.random() * 3) > 1 ? 'Мужчина' : 'Женщина',       //  Пол      
 
 
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
@@ -252,7 +140,6 @@ const personGenerator = {
     },
 
     randomPatronymiс: function() {                                    // Отчество
-
         if   (this.person.gender == "Мужчина"  ) {
             
             return this.randomValue(this.patronymicJson)+ "ич";
@@ -261,7 +148,6 @@ const personGenerator = {
     },
     
     randomSurname: function() {                                    // Фамилия
-
         if   (this.person.gender == "Мужчина"  ) {
             
             return this.randomValue(this.surnameJson);
@@ -279,30 +165,36 @@ const personGenerator = {
 
     randomBitrhMonth: function() {                                    // Месяц рождения                  
         return this.randomValue(this.birthMonthJson);       
-    },  
+    }, 
+    
+    randomBitrhDay28: (max = 28, min = 1) => Math.floor(Math.random() * (max - min + 1) + min),
+    randomBitrhDay30: (max = 30, min = 1) => Math.floor(Math.random() * (max - min + 1) + min),
+    randomBitrhDay31: (max = 31, min = 1) => Math.floor(Math.random() * (max - min + 1) + min),
+
+
 
     randomBitrhDay: function() {                                      // День рождения
         
         if (this.person.monthDay == "февраля") {            // Для февраля (Спасибо без высокосных)
             console.log("Максимум 28 дней"); 
-        return this.randomValue(this.randomBitrhDay28);
+        return this.randomBitrhDay28();
         }
         if (this.person.monthDay == "апреля") {                   // Где 30 дней 
             console.log("Максимум 30 дней");            
-        return this.randomValue(this.randomBitrhDay30);             
+        return this.randomBitrhDay30();             
         }
         if (this.person.monthDay == "сентября") {                   // Где 30 дней 
             console.log("Максимум 30 дней"); 
-        return this.randomValue(this.randomBitrhDay30);            
+        return this.randomBitrhDay30();            
         }
         if (this.person.monthDay == "ноября") {                   // Где 30 дней 
             console.log("Максимум 30 дней");             
-        return this.randomValue(this.randomBitrhDay30);            
+        return this.randomBitrhDay30();            
         }       
         if (this.person.monthDay == "июня") {                   // Где 30 дней     
             console.log("Максимум 30 дней");     
-        return this.randomValue(this.randomBitrhDay30);             
-        }else  console.log("Максимум 31 дней");  return  this.randomValue(this.randomBitrhDay31);  
+        return this.randomBitrhDay30();             
+        }else  console.log("Максимум 31 дней");  return  this.randomBitrhDay31();  
     },
     
     randomBitrhYear: (max = 2010, min = 1960) => Math.floor(Math.random() * (max - min + 1) + min),  // Год рождения    

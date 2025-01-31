@@ -79,7 +79,6 @@ h4 {
     
 }
 
-
 .game-card {
     height: 100vh;
     font-family: 'Open Sans', monospace;
@@ -91,7 +90,7 @@ h4 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .btn-link {
-    background-color: #4CAF50;
+    background-color: #3ca23f;
     color: white;
     padding: 15px 32px;
     text-align: center;

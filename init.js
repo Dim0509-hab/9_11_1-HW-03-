@@ -13,11 +13,9 @@ window.onload = function()
 
 };
 
-document.getElementById('btnRetry').addEventListener('click', function () {  //Заново
-    window.location.reload()
+document.getElementById('btnRetry').addEventListener('click', function () {  //  Пуск
+    window.location.reload(window.onload)
    })
-/*
-document.getElementById('btnClear').addEventListener('click', function () {  //stop
-    window.location.reload()
-   })*/
+
+
 
