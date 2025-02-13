@@ -53,16 +53,16 @@ const personGenerator = {
     patronymicJson: `{
         "count": 10,
         "list": {     
-            "id_1": "Александров",
-            "id_2": "Максимов",
-            "id_3": "Иванов",
-            "id_4": "Артемьев",
-            "id_5": "Дмитриев",
-            "id_6": "Никитов",
-            "id_7": "Михаилов",
-            "id_8": "Даниилов",
-            "id_9": "Егоров",
-            "id_10": "Андреев"
+            "id_1": "Александро",
+            "id_2": "Максимо",
+            "id_3": "Ивано",
+            "id_4": "Артемье",
+            "id_5": "Дмитрие",
+            "id_6": "Никито",
+            "id_7": "Михаило",
+            "id_8": "Даниило",
+            "id_9": "Егоро",
+            "id_10": "Андрее"
         }
     }`,
     professionMaleJson: `{
@@ -136,8 +136,8 @@ const personGenerator = {
     randomPatronymiс: function() {                                                   // Отчество
         if   (this.person.gender == "Мужчина"  ) { 
             
-            return this.randomValue(this.patronymicJson)+ "ич";
-        }  else   return this.randomValue(this.patronymicJson)+ "нa";
+            return this.randomValue(this.patronymicJson)+ "вич";
+        }  else   return this.randomValue(this.patronymicJson)+ "внa";
     },
     
     randomSurname: function() {                                                       // Фамилия
@@ -191,7 +191,5 @@ const personGenerator = {
         this.person.birthDay = this.randomBitrhDay();
         
         return this.person;
-    }
-
-    
+    }    
 };
