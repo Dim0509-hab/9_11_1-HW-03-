@@ -26,7 +26,7 @@ const personGenerator = {
             "id_1": "Александр",
             "id_2": "Максим",
             "id_3": "Иван",
-            "id_4": "Артем",
+            "id_4": "Артём",
             "id_5": "Дмитрий",
             "id_6": "Никита",
             "id_7": "Михаил",
@@ -50,21 +50,7 @@ const personGenerator = {
             "id_10": "Генриетта"
         }
     }`,
-    patronymicJson: `{
-        "count": 10,
-        "list": {     
-            "id_1": "Александро",
-            "id_2": "Максимо",
-            "id_3": "Ивано",
-            "id_4": "Артемье",
-            "id_5": "Дмитрие",
-            "id_6": "Никито",
-            "id_7": "Михаило",
-            "id_8": "Даниило",
-            "id_9": "Егоро",
-            "id_10": "Андрее"
-        }
-    }`,
+    
     professionMaleJson: `{
         "count": 10,
         "list": {     
@@ -132,12 +118,51 @@ const personGenerator = {
             return this.randomValue(this.firstNameMaleJson);
         }  else     return this.randomValue(this.firstNameFemaleJson);         
     },
+  
 
-    randomPatronymiс: function() {                                                   // Отчество
-        if   (this.person.gender == "Мужчина"  ) { 
-            
-            return this.randomValue(this.patronymicJson)+ "вич";
-        }  else   return this.randomValue(this.patronymicJson)+ "внa";
+    randomPatronymiс: function() {                             ///// За непонимание этой задачи был наказан
+        let name = this.randomValue(this.firstNameMaleJson);
+        let patronymic;
+    
+        if (this.person.gender === "Мужчина") {
+            switch (name) {
+                case "Дмитрий":
+                    patronymic = name.slice(0, -1) + "евич";
+                    break;
+                case "Андрей":
+                    patronymic = name.slice(0, -1) + "евич";
+                    break;
+                case "Никита":
+                    patronymic = name.slice(0, -1) + "ович";
+                    break;
+                case "Артём":                    
+                    patronymic = name.slice(0, -2) + "емьевич";
+                    break;
+                default:
+                    patronymic = name + "ович";
+                    break;
+            }
+        } else {
+            switch (name) {
+                case "Дмитрий":
+                    patronymic = name.slice(0, -1) + "евна";
+                    break;
+                case "Андрей":
+                    patronymic = name.slice(0, -1) + "евна";
+                    break;
+                case "Никита":
+                    patronymic = name.slice(0, -1) + "овна";
+                    break;
+                case "Артём":
+                    patronymic = name.slice(0, -2) + "емьевна";
+                    break;
+                default:
+                    patronymic = name + "овна";
+                    break;
+            }
+        }
+    
+        return patronymic;
     },
     
     randomSurname: function() {                                                       // Фамилия
